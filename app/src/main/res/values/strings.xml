@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BeerMap</string>
+    <string name="title_bar_detail">Bar Detail</string>
+</resources>
