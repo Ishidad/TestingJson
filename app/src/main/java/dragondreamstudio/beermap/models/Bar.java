@@ -1,9 +1,16 @@
-package dragondreamstudio.beermap;
+package dragondreamstudio.beermap.models;
 
-public class Bar {
+import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
+public class Bar implements Serializable {
+
+    //@SerializedName("name")
     private String name;
+    //@SerializedName("place_id")
     private String place_id;
+    //@SerializedName("logo_src")
     private String logo_src;
 
     public Bar(String name, String id, String logo_src) {

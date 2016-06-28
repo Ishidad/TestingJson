@@ -1,53 +1,67 @@
 package dragondreamstudio.beermap;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
-
-import dragondreamstudio.beermap.dummy.DummyContent;
-import dragondreamstudio.beermap.managers.VolleyManager;
 
 import java.util.List;
 
+import dragondreamstudio.beermap.adapters.BarListAdapter;
+import dragondreamstudio.beermap.managers.VolleyManager;
+import dragondreamstudio.beermap.models.Bar;
+import dragondreamstudio.beermap.models.BarList;
+
 public class BarListActivity extends AppCompatActivity {
 
-    private static final String REQUEST_SEASONS_URL = "https://raw.githubusercontent.com/Ishidad/Beermap/master/bars.json";
     public static final String TAG = BarListActivity.class.getSimpleName();
-    private VolleyManager volleyManager;
-    private boolean mTwoPane;
+    //private VolleyManager volleyManager;
+    //private boolean mTwoPane;
+    private BarList barList;
+    private RecyclerView myRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        volleyManager = VolleyManager.getInstance(getApplicationContext());
+
+        //volleyManager = VolleyManager.getInstance(getApplicationContext());
         setContentView(R.layout.activity_bar_list);
+        myRecyclerView = (RecyclerView) findViewById(R.id.bar_list);
+        myRecyclerView.setHasFixedSize(true);
+        myRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        myRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
+        Bundle b = this.getIntent().getExtras();
+        if(b != null){
+            barList = (BarList) b.getSerializable("bundleBarList");
+        }
+
+        /*
         View recyclerView = findViewById(R.id.bar_list);
         assert recyclerView != null;
         setupRecyclerView((RecyclerView) recyclerView);
+        */
 
+        BarListAdapter adapter = new BarListAdapter(barList.getBars());
+        myRecyclerView.setAdapter(adapter);
+
+        /*
         if (findViewById(R.id.bar_detail_container) != null) {
             mTwoPane = true;
         }
+        */
     }
 
+    /*
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
-        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(DummyContent.ITEMS));
+        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter());
     }
 
     public class SimpleItemRecyclerViewAdapter
@@ -109,7 +123,7 @@ public class BarListActivity extends AppCompatActivity {
                 super(view);
                 mView = view;
                 mIdView = (TextView) view.findViewById(R.id.bar_name);
-                mContentView = (TextView) view.findViewById(R.id.bar_name_subtext);
+                mContentView = (TextView) view.findViewById(R.id.bar_subtext);
             }
 
             @Override
@@ -118,4 +132,5 @@ public class BarListActivity extends AppCompatActivity {
             }
         }
     }
+    */
 }
