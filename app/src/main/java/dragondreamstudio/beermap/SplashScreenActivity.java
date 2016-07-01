@@ -3,54 +3,62 @@ package dragondreamstudio.beermap;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.provider.SyncStateContract;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
-import com.android.volley.Request;
+import android.util.Log;
+
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.google.gson.Gson;
+
+import dragondreamstudio.beermap.managers.GsonRequest;
 import dragondreamstudio.beermap.managers.VolleyManager;
 import dragondreamstudio.beermap.models.BarList;
 
 public class SplashScreenActivity extends AppCompatActivity{
 
     private static final String JSON_URL = "https://raw.githubusercontent.com/Ishidad/Beermap/master/bars.json";
-    private Intent i = new Intent();
-    private Bundle b = new Bundle();
+    private static final String TAG = SplashScreenActivity.class.getSimpleName();
+    private Intent intent;
+    private Bundle bundle;
+    private BarList barList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
 
-        StringRequest request = new StringRequest(Request.Method.GET, JSON_URL, new Response.Listener<String>(){
-            @Override
-            public void onResponse(String response){
-                BarList barList = new Gson().fromJson(response,BarList.class);
-                //Toast.makeText(SplashScreenActivity.this, response, Toast.LENGTH_SHORT).show();
-                b.putSerializable("bundleBarList", barList);
-                i.putExtras(b);
-                i.setClass(SplashScreenActivity.this,BarListActivity.class);
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error){
-                //error
-            }
-        });
+        GsonRequest<BarList> request = new GsonRequest<BarList>(
+                JSON_URL,
+                BarList.class,
+                null,
+                new Response.Listener<BarList>() {
+                    @Override
+                    public void onResponse(BarList response) {
+                        barList = response;
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.d(TAG, "Error Respuesta en JSON: " + error.getMessage());
+                    }
+                }
+        );
 
         VolleyManager.getInstance(this);
         VolleyManager.myVolleyManager.addToRequestQueue(request);
+
+        intent = new Intent(this, BarListActivity.class);
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(i));
+                //bundle.putSerializable("bundle", barList);
+                intent.putExtra("passList", barList);
+                //intent.setClass(SplashScreenActivity.this,BarListActivity.class);
+                startActivity(new Intent(intent));
                 finish();
             }
-        }, 4000);
+        }, 5000);
     }
 }

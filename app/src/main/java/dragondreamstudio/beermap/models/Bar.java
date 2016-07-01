@@ -1,22 +1,21 @@
 package dragondreamstudio.beermap.models;
 
-import com.google.gson.annotations.SerializedName;
-
 import java.io.Serializable;
 
 public class Bar implements Serializable {
 
-    //@SerializedName("name")
     private String name;
-    //@SerializedName("place_id")
     private String place_id;
-    //@SerializedName("logo_src")
     private String logo_src;
+    private double lat;
+    private double lng;
 
-    public Bar(String name, String id, String logo_src) {
+    public Bar(String name, String place_id, String logo_src, double lat, double lng) {
         this.name = name;
-        this.place_id = id;
+        this.place_id = place_id;
         this.logo_src = logo_src;
+        this.lat = lat;
+        this.lng = lng;
     }
 
     public String getName() {
@@ -27,12 +26,12 @@ public class Bar implements Serializable {
         this.name = name;
     }
 
-    public String getId() {
+    public String getPlace_id() {
         return place_id;
     }
 
-    public void setId(String id) {
-        this.place_id = id;
+    public void setPlace_id(String place_id) {
+        this.place_id = place_id;
     }
 
     public String getLogo_src() {
@@ -41,5 +40,21 @@ public class Bar implements Serializable {
 
     public void setLogo_src(String logo_src) {
         this.logo_src = logo_src;
+    }
+
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
+    }
+
+    public double getLng() {
+        return lng;
+    }
+
+    public void setLng(double lng) {
+        this.lng = lng;
     }
 }

@@ -13,7 +13,7 @@ import dragondreamstudio.beermap.models.Bar;
 
 public class BarListAdapter extends  RecyclerView.Adapter<BarListAdapter.MyViewHolder> {
 
-    List<Bar> mBarList;
+    private List<Bar> mBarList;
 
     public BarListAdapter(List<Bar> barList){
         mBarList = barList;
@@ -35,11 +35,11 @@ public class BarListAdapter extends  RecyclerView.Adapter<BarListAdapter.MyViewH
         return mBarList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    class MyViewHolder extends RecyclerView.ViewHolder{
 
-        public TextView mBarName;
+        TextView mBarName;
 
-        public MyViewHolder(View itemView) {
+        MyViewHolder(View itemView) {
             super(itemView);
             mBarName = (TextView) itemView.findViewById(R.id.bar_name);
 
