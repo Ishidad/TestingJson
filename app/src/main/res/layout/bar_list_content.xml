@@ -19,7 +19,7 @@
         android:layout_height="match_parent"
         android:gravity="center_horizontal|center_vertical"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-        tools:text="O´Connell´s Shopping del Siglo"
+        tools:text="Default bar name"
         android:layout_weight="2.50"
         android:id="@+id/bar_name"
         android:textStyle="normal|bold"
