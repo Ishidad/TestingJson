@@ -2,4 +2,5 @@
     <string name="app_name">BeerMap</string>
     <string name="title_bar_detail">Bar Detail</string>
     <string name="title_activity_maps">Map</string>
+    <string name="a">To do</string>
 </resources>

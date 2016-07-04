@@ -1,53 +1,109 @@
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="dragondreamstudio.beermap.BarDetailActivity"
-    tools:ignore="MergeRootFrame">
+    tools:ignore="MergeRootFrame"
+    android:orientation="vertical"
+    android:id="@+id/bar_details_layout">
 
-    <android.support.design.widget.AppBarLayout
+    <ImageView
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/app_bar_height"
         android:fitsSystemWindows="true"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/toolbar_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:toolbarId="@+id/toolbar">
-
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/detail_toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
-        </android.support.design.widget.CollapsingToolbarLayout>
-
-    </android.support.design.widget.AppBarLayout>
-
-    <android.support.v4.widget.NestedScrollView
-        android:id="@+id/bar_detail_container"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        android:layout_height="48dp"
+        android:id="@+id/bar_name_title"
+        tools:text="BAR NAME"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        android:textStyle="normal|bold"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:layout_below="@+id/app_bar"
+        android:layout_alignParentStart="true" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+    <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical|start"
-        android:layout_margin="@dimen/fab_margin"
-        app:layout_anchor="@+id/bar_detail_container"
-        app:layout_anchorGravity="top|end"
-        app:srcCompat="@android:drawable/stat_notify_chat" />
+        android:id="@+id/ratingBar"
+        android:numStars="5"
+        android:rating="5"
+        style="@android:style/Widget.DeviceDefault.RatingBar"
+        android:isIndicator="true"
+        android:layout_below="@+id/bar_name_title"
+        android:layout_centerHorizontal="true" />
 
-</android.support.design.widget.CoordinatorLayout>
+    <ImageView
+        android:id="@+id/address_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/btn_direction"
+        android:layout_alignTop="@+id/bar_address_text"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp" />
+
+    <TextView
+        android:id="@+id/bar_address_text"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        tools:text="Fake Street 123"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:textSize="24sp"
+        android:layout_marginTop="66dp"
+        android:layout_below="@+id/ratingBar"
+        android:layout_alignStart="@+id/ratingBar" />
+
+    <ImageView
+        android:id="@+id/phone_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/btn_phone"
+        android:layout_below="@+id/address_button"
+        android:layout_alignStart="@+id/address_button"
+        android:layout_marginTop="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/bar_phone_text"
+        tools:text="+54 0341 4123456"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:textSize="24sp"
+        android:layout_alignTop="@+id/phone_button"
+        android:layout_alignStart="@+id/bar_address_text" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/btn_url"
+        android:id="@+id/web_button"
+        android:layout_below="@+id/phone_button"
+        android:layout_alignStart="@+id/address_button"
+        android:layout_marginTop="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:textSize="24sp"
+        android:layout_alignBottom="@+id/web_button"
+        android:layout_alignStart="@+id/bar_address_text"
+        android:id="@+id/bar_url_text"
+        tools:text="www.facebook.com" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/Google_Maps_Icon"
+        android:id="@+id/google_map_button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="38dp" />
+
+</RelativeLayout>
