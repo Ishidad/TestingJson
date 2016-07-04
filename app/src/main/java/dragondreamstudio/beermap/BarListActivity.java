@@ -33,7 +33,7 @@ public class BarListActivity extends AppCompatActivity {
             barList = (BarList) intent.getSerializableExtra("passList");
         }
 
-        BarListAdapter adapter = new BarListAdapter(barList.getBars());
+        BarListAdapter adapter = new BarListAdapter(barList.getBars(), this);
         myRecyclerView.setAdapter(adapter);
     }
 }

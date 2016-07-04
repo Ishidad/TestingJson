@@ -15,10 +15,9 @@ import dragondreamstudio.beermap.models.BarList;
 
 public class SplashScreenActivity extends AppCompatActivity{
 
-    private static final String JSON_URL = "https://raw.githubusercontent.com/Ishidad/Beermap/master/bars.json";
+    private static final String JSON_URL = "https://raw.githubusercontent.com/Ishidad/TestingJson/master/bars.json";
     private static final String TAG = SplashScreenActivity.class.getSimpleName();
     private Intent intent;
-    private Bundle bundle;
     private BarList barList;
 
     @Override
@@ -39,7 +38,7 @@ public class SplashScreenActivity extends AppCompatActivity{
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.d(TAG, "Error Respuesta en JSON: " + error.getMessage());
+                        Log.d(TAG, "Error on JSON response: " + error.getMessage());
                     }
                 }
         );
@@ -53,9 +52,7 @@ public class SplashScreenActivity extends AppCompatActivity{
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                //bundle.putSerializable("bundle", barList);
                 intent.putExtra("passList", barList);
-                //intent.setClass(SplashScreenActivity.this,BarListActivity.class);
                 startActivity(new Intent(intent));
                 finish();
             }

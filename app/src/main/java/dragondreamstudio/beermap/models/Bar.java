@@ -35,6 +35,8 @@ public class Bar implements Serializable {
     }
 
     public String getLogo_src() {
+        //String IMG_EXT = ".jpg";
+        //logo_src = logo_src + IMG_EXT;
         return logo_src;
     }
 
