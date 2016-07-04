@@ -1,0 +1,172 @@
+{
+	"bars":[
+		{
+			"name": "Antares Pichincha",
+			"place_id": "ChIJOR29Pk-rt5UR0hsdFVQWpD8",
+			"logo_src": "antares",
+			"lat":-32.93644800000001,
+			"lng":-60.658711
+		},
+		{
+			"name": "Antares Pellegrini",
+			"place_id": "ChIJi1BScw-rt5URT3HxQqBdYVQ",
+			"logo_src": "antares",
+			"lat": -32.9572428,
+			"lng": -60.64165389999999
+		},
+		{
+			"name": "Bar del Mundo",
+			"place_id": "ChIJLewkcA-rt5URKbFNZqRYLuc",
+			"logo_src": "bardelmundo",
+			"lat": -32.9573402,
+			"lng": -60.6411738
+		},
+		{
+			"name": "Barba Roja",
+			"place_id": "ChIJQaPOjk2rt5URR-Z4pgR_5Rk",
+			"logo_src": "barbaroja",
+			"lat": -32.9322412,
+			"lng": -60.6629617
+		},
+		{
+			"name": "Basquiat",
+			"place_id" : "ChIJ_w3cJ0irt5URn97F_unhgUc",
+			"logo_src": "basquiat",
+			"lat": -32.934342,
+			"lng": -60.651846
+		},
+		{
+			"name": "Baum",
+			"place_id": "ChIJY0JF8w6rt5URz8OnZIaWb0M",
+			"logo_src": "baum",
+			"lat": -32.95779149999999,
+			"lng": -60.6444332
+		},
+		{
+			"name": "Beatmemo",
+			"place_id": "ChIJJb6fNDart5URnygedPZlxCM",
+			"logo_src": "beatmemo",
+			"lat": -32.9332467,
+			"lng": -60.65056250000001
+		},
+		{
+			"name": "Cadencia",
+			"place_id": "ChIJN4X_3j6rt5URcQHlI-iLMS0",
+			"logo_src": "cadencia",
+			"lat": -32.9417343,
+			"lng": -60.6485872
+		},
+		{
+			"name": "Cervario",
+			"place_id": "ChIJF8YWLUyrt5URM_OtSDA4cPM",
+			"logo_src": "cervario",
+			"lat": -32.93274360000001,
+			"lng": -60.66033580000001
+		},
+		{
+			"name": "Collins Francia",
+			"place_id": "ChIJwSIj5FGrt5UR_cczJeupPfc",
+			"logo_src": "collins",
+			"lat": -32.9351024,
+			"lng": -60.6638175
+		},
+		{
+			"name": "Collins Pellegrini",
+			"place_id": "ChIJO0UBiw2rt5UR4rtapqbILfs",
+			"logo_src": "collins",
+			"lat": -32.955898,
+			"lng": -60.64754199999999
+		},
+		{
+			"name": "Daniel O.",
+			"place_id": "ChIJW7QJk02rt5URkteilFqNnbQ",
+			"logo_src": "danielo",
+			"lat": -32.9323645,
+			"lng": -60.6623849
+		},
+		{
+			"name": "Fenicia",
+			"place_id": "ChIJu2ac-FGrt5UR2qaAVLh9P_U",
+			"logo_src": "fenicia",
+			"lat": -32.93419400000001,
+			"lng": -60.663836
+		},
+		{
+			"name": "Galgo",
+			"place_id": "ChIJy8KKbjqrt5UROIBv1PjKnl0",
+			"logo_src": "galgo",
+			"lat": -32.9349553,
+			"lng": -60.6438272
+		},
+		{
+			"name": "Mandino",
+			"place_id": "ChIJAf2yog2rt5URHCyC2zngbIQ",
+			"logo_src": "mandino",
+			"lat": -32.9572029,
+			"lng": -60.64811520000001
+		},	
+		{
+			"name": "O´Connell´s Paraguay",
+			"place_id": "ChIJxbeNYzurt5URFlxRs5cUwtY",
+			"logo_src": "oconnells",
+			"lat": -32.9386759,
+			"lng": -60.6420688
+		},
+		{
+			"name": "O´Connell´s Pichincha",
+			"place_id": "ChIJBVpBHEirt5URnFJYK1tNN2A",
+			"logo_src": "oconnells",
+			"lat": -32.935458,
+			"lng": -60.65186199999999
+		},
+		{	
+			"name": "O´Connell´s Puerto Norte",
+			"place_id": "ChIJ8_LFDK5UtpURBzk1_xbIvNc",
+			"logo_src": "oconnells",
+			"lat": -32.9230694,
+			"lng": -60.6636759
+		},
+		{
+			"name": "O´Connell´s Pellegrini",
+			"place_id": "ChIJce1SKASrt5UR7fWozVROBzE",
+			"logo_src": "oconnells",
+			"lat": -32.9578721,
+			"lng": -60.6366477
+		},
+		{
+			"name": "O´Connell´s Shopping del Siglo",
+			"place_id": "ChIJwb0Rtz-rt5URgVgIeTSD2c8",
+			"logo_src": "oconnells",
+			"lat": -32.94442519999999,
+			"lng": -60.64943830000001
+		},
+		{
+			"name": "Old Traford",
+			"place_id": "ChIJIbECrQGrt5URf1xxosDGPb4",
+			"logo_src": "oldtraford",
+			"lat": -32.95902999999999,
+			"lng": -60.63086389999999
+		},
+		{
+			"name": "Rato",
+			"place_id": "ChIJORlLwEert5UR7IEda7wlqWM",
+			"logo_src": "rato",
+			"lat": -32.9377495,
+			"lng": -60.65329089999999
+		},
+		{
+			"name": "Stuttgart",
+			"place_id": "ChIJEV_fMW2rt5URXEkFmconq2E",
+			"logo_src": "stuttgart",
+			"lat": -32.9552081,
+			"lng": -60.6521412
+		},
+		{
+			"name": "Zodiako",
+			"place_id": "ChIJo-qF5VGrt5URI-PyWlZomlQ",
+			"logo_src": "zodiako",
+			"lat": -32.954042,
+			"lng": -60.63228100000001
+		}		
+	]
+}
