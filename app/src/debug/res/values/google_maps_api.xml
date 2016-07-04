@@ -1,0 +1,21 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=3E:E1:D4:93:31:A6:04:49:AC:35:B6:15:D1:ED:6F:2B:DB:57:F6:45%3Bdragondreamstudio.beermap
+
+    You can also add your credentials to an existing key, using this line:
+    3E:E1:D4:93:31:A6:04:49:AC:35:B6:15:D1:ED:6F:2B:DB:57:F6:45;dragondreamstudio.beermap
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
+        AIzaSyChIhBWy_xNRa3hnW68FMKJRY_lwmNIUmw
+    </string>
+</resources>

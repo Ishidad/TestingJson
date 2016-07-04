@@ -36,4 +36,6 @@ public class BarListActivity extends AppCompatActivity {
         BarListAdapter adapter = new BarListAdapter(barList.getBars(), this);
         myRecyclerView.setAdapter(adapter);
     }
+
+
 }
