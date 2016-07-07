@@ -40,6 +40,8 @@ public class BarListAdapter extends  RecyclerView.Adapter<BarListAdapter.MyViewH
             public void onClick(View view){
                 Intent intent = new Intent(adapterContext, BarDetailActivity.class);
                 intent.putExtra("placeId", mBarList.get(i).getPlace_id());
+                intent.putExtra("Lat", mBarList.get(i).getLat());
+                intent.putExtra("Lng", mBarList.get(i).getLng());
                 adapterContext.startActivity(intent);
             }
         });

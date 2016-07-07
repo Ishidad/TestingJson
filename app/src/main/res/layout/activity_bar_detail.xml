@@ -9,63 +9,130 @@
     android:orientation="vertical"
     android:id="@+id/bar_details_layout">
 
-    <RatingBar
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/liteMap"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        tools:context="dragondreamstudio.beermap.MapsActivity"
+        map:cameraZoom="17"
+        map:mapType="normal"
+        map:uiCompass="false"
+        map:uiRotateGestures="false"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_above="@+id/liteMap"
+        android:layout_alignParentStart="true"
+        android:id="@+id/layout_container">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ratingBar"
+            android:layout_alignParentStart="true"
+            android:layout_above="@+id/phone_layout"
+            android:id="@+id/address_layout">
+
+            <ImageView
+                android:id="@+id/address_button"
+                android:layout_width="@dimen/detail_icon_size"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/address_icon"
+                android:layout_marginLeft="@dimen/details_image_left_margin"/>
+
+            <TextView
+                android:id="@+id/bar_address_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:text="Fake Street 123"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                android:gravity="center"
+                android:textAlignment="center"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/web_layout"
+            android:layout_alignParentStart="true"
+            android:id="@+id/phone_layout">
+
+            <ImageView
+                android:id="@+id/phone_button"
+                android:layout_width="@dimen/detail_icon_size"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/phone_icon"
+                android:layout_marginLeft="@dimen/details_image_left_margin"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/bar_phone_text"
+                tools:text="+54 0341 4123456"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                android:textSize="@dimen/details_text_size"
+                android:layout_marginLeft="30dp"
+                android:gravity="center"
+                android:textAlignment="viewStart"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/liteMap"
+            android:layout_alignParentStart="true"
+            android:id="@+id/web_layout">
+
+            <ImageView
+                android:layout_width="@dimen/detail_icon_size"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/web_icon"
+                android:id="@+id/web_button"
+                android:layout_marginLeft="@dimen/details_image_left_margin"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                android:textSize="@dimen/details_text_size"
+                android:id="@+id/bar_url_text"
+                tools:text="www.facebook.com"
+                android:gravity="center"
+                android:textAlignment="center"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/progressSpinner"
+        android:layout_alignTop="@+id/layout_container"
+        android:layout_centerHorizontal="true" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
         android:id="@+id/ratingBar"
         android:numStars="5"
         android:rating="5"
-        style="@android:style/Widget.DeviceDefault.RatingBar"
+        style="@style/Widget.AppCompat.RatingBar"
         android:isIndicator="true"
-        android:layout_below="@+id/bar_name_text"
+        android:layout_above="@+id/layout_container"
         android:layout_centerHorizontal="true" />
-
-    <ImageView
-        android:id="@+id/phone_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/btn_phone"
-        android:layout_below="@+id/address_button"
-        android:layout_alignStart="@+id/ratingBar"
-        android:layout_marginTop="25dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:id="@+id/bar_phone_text"
-        tools:text="+54 0341 4123456"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-        android:textSize="24sp"
-        android:layout_alignTop="@+id/phone_button"
-        android:layout_toEndOf="@+id/phone_button" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/btn_url"
-        android:id="@+id/web_button"
-        android:layout_below="@+id/phone_button"
-        android:layout_alignStart="@+id/ratingBar"
-        android:layout_marginTop="25dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-        android:textSize="24sp"
-        android:layout_alignBottom="@+id/web_button"
-        android:layout_toEndOf="@+id/web_button"
-        android:id="@+id/bar_url_text"
-        tools:text="www.facebook.com" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/googlemaps_icon"
-        android:id="@+id/google_map_button"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -75,28 +142,8 @@
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
         android:textStyle="normal|bold"
         android:textAlignment="center"
-        android:textSize="36sp"
-        android:layout_marginTop="40dp"
-        android:layout_alignParentTop="true"
+        android:gravity="bottom"
+        android:textSize="34sp"
+        android:layout_above="@+id/ratingBar"
         android:layout_alignParentStart="true" />
-
-    <TextView
-        android:id="@+id/bar_address_text"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        tools:text="Fake Street 123"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-        android:textSize="24sp"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/ratingBar"
-        android:layout_toEndOf="@+id/address_button" />
-
-    <ImageView
-        android:id="@+id/address_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/btn_direction"
-        android:layout_alignTop="@+id/bar_address_text"
-        android:layout_alignStart="@+id/phone_button" />
-
 </RelativeLayout>

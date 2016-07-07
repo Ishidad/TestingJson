@@ -5,26 +5,28 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#800a0a">
+    android:background="#800a0a" >
 
-    <ImageView
-        android:src="@drawable/app_logo_title"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/logo_title_image"
-        android:adjustViewBounds="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_above="@+id/logo_image"
-        tools:ignore="ContentDescription" />
+        android:layout_centerInParent="true">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/logo_image"
-        android:src="@drawable/app_logo"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        tools:ignore="ContentDescription" />
+        <ImageView
+            android:src="@drawable/app_logo_title"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:id="@+id/logo_title_image"
+            tools:ignore="ContentDescription"
+            android:layout_alignStart="@+id/logo_image" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:id="@+id/logo_image"
+            android:src="@drawable/app_logo"
+            tools:ignore="ContentDescription"
+            android:layout_below="@+id/logo_title_image" />
+    </RelativeLayout>
 
 </RelativeLayout>

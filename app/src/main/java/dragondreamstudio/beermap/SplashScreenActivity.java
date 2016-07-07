@@ -25,6 +25,8 @@ public class SplashScreenActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
 
+        intent = new Intent(this, BarListActivity.class);
+
         GsonRequest<BarList> request = new GsonRequest<BarList>(
                 JSON_URL,
                 BarList.class,
@@ -33,6 +35,17 @@ public class SplashScreenActivity extends AppCompatActivity{
                     @Override
                     public void onResponse(BarList response) {
                         barList = response;
+
+
+                        Handler handler = new Handler();
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                intent.putExtra("passList", barList);
+                                startActivity(new Intent(intent));
+                                finish();
+                            }
+                        });
                     }
                 },
                 new Response.ErrorListener() {
@@ -45,17 +58,5 @@ public class SplashScreenActivity extends AppCompatActivity{
 
         VolleyManager.getInstance(this);
         VolleyManager.myVolleyManager.addToRequestQueue(request);
-
-        intent = new Intent(this, BarListActivity.class);
-
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                intent.putExtra("passList", barList);
-                startActivity(new Intent(intent));
-                finish();
-            }
-        }, 5000);
     }
 }
