@@ -10,4 +10,5 @@
     <string name="title_activity_bar_info">BarInfoActivity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="comment_text_dummy">El lugar esta muy bueno, la comida es muy rica y los precios son normales. La atención es irregular, depende el día y el mozo, a veces bien y a veces mal. Lo unico malo del lugar es que siempre se llena MUCHO y a veces hay que esperar demasiado para tener una mesa.</string>
 </resources>

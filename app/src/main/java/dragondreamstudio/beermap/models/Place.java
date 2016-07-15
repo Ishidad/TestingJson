@@ -1,6 +1,7 @@
 package dragondreamstudio.beermap.models;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Place implements Serializable {
 
@@ -11,6 +12,7 @@ public class Place implements Serializable {
     private String formatted_phone_number;
     private String website;
     private String url;
+    private List<Review> reviews;
 
     public String getName() {
         return name;
@@ -68,4 +70,11 @@ public class Place implements Serializable {
         this.url = url;
     }
 
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
 }
