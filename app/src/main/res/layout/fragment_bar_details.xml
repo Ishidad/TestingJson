@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/detail_info_layout" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_above="@+id/liteMapLayout"
+        android:layout_alignParentStart="true"
+        android:id="@+id/layout_container">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/address_layout">
+
+            <ImageView
+                android:id="@+id/address_button"
+                android:layout_width="@dimen/detail_icon_size"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/address_icon"
+                android:layout_marginStart="@dimen/details_image_left_margin"
+                android:contentDescription="@string/direction_icon" />
+
+            <TextView
+                android:id="@+id/bar_address_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:text="Fake Street 123"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:gravity="center"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/phone_layout">
+
+            <ImageView
+                android:id="@+id/phone_button"
+                android:layout_width="@dimen/detail_icon_size"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/phone_icon"
+                android:layout_marginStart="@dimen/details_image_left_margin"
+                android:contentDescription="@string/phone_icon" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/bar_phone_text"
+                tools:text="+54 0341 4123456"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                android:textSize="@dimen/details_text_size"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/web_layout">
+
+            <ImageView
+                android:layout_width="@dimen/detail_icon_size"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/web_icon"
+                android:id="@+id/web_button"
+                android:layout_marginStart="@dimen/details_image_left_margin"
+                android:contentDescription="@string/url_icon" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                android:textSize="@dimen/details_text_size"
+                android:id="@+id/bar_url_text"
+                tools:text="www.facebook.com"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:gravity="center"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/liteMapLayout"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" >
+    </FrameLayout>
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:id="@+id/ratingBar"
+        android:numStars="5"
+        android:rating="5"
+        style="@style/Widget.AppCompat.RatingBar"
+        android:isIndicator="true"
+        android:layout_above="@+id/layout_container"
+        android:layout_centerHorizontal="true" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressSpinner"
+        android:layout_alignTop="@+id/layout_container"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

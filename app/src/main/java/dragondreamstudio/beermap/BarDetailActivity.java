@@ -27,7 +27,7 @@ import dragondreamstudio.beermap.models.Places;
 
 public class BarDetailActivity extends AppCompatActivity implements OnMapReadyCallback {
 
-    private static final String TAG = SplashScreenActivity.class.getSimpleName();
+    private static final String TAG = BarDetailActivity.class.getSimpleName();
     private String barId;
     private Places places;
     private LatLng mPosition;

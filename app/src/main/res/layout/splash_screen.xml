@@ -7,26 +7,27 @@
     android:layout_height="match_parent"
     android:background="#800a0a" >
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <ImageView
-            android:src="@drawable/app_logo_title"
+            android:src="@drawable/app_logo_title_wb"
             android:layout_width="match_parent"
             android:layout_height="90dp"
             android:id="@+id/logo_title_image"
-            tools:ignore="ContentDescription"
-            android:layout_alignStart="@+id/logo_image" />
+            tools:ignore="ContentDescription" />
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_height="match_parent"
             android:id="@+id/logo_image"
             android:src="@drawable/app_logo"
             tools:ignore="ContentDescription"
-            android:layout_below="@+id/logo_title_image" />
-    </RelativeLayout>
+            android:contentDescription="@string/app_logo_description" />
+    </LinearLayout>
 
 </RelativeLayout>
