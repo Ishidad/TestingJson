@@ -9,7 +9,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-
 import dragondreamstudio.beermap.adapters.BarListAdapter;
 import dragondreamstudio.beermap.models.BarList;
 
@@ -52,6 +51,4 @@ public class BarListActivity extends AppCompatActivity {
             });
         }
     }
-
-
 }

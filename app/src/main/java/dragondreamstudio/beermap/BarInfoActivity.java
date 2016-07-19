@@ -4,27 +4,18 @@ import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-
 import dragondreamstudio.beermap.fragments.BarCommentFragment;
 import dragondreamstudio.beermap.fragments.BarDetailsFragment;
-import dragondreamstudio.beermap.managers.GsonRequest;
-import dragondreamstudio.beermap.managers.VolleyManager;
-import dragondreamstudio.beermap.models.Places;
 
 public class BarInfoActivity extends AppCompatActivity {
 
@@ -34,6 +25,7 @@ public class BarInfoActivity extends AppCompatActivity {
     private final String BUNDLE_KEY_LAT = "keyLat";
     private final String BUNDLE_KEY_LNG = "keyLng";
     public static FragmentManager fragmentManager;
+    private SectionsPagerAdapter mSectionsPagerAdapter;
     private String barId;
     private String name;
     private Double lat;
@@ -45,7 +37,6 @@ public class BarInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bar_info);
 
-        fragmentManager = getSupportFragmentManager();
         String API_KEY = "&key=AIzaSyAImBQiqvaXOQtqeK8VC-9I96kMmB6Mz7I";
         String API_URL = "https://maps.googleapis.com/maps/api/place/details/json?placeid=";
 
@@ -63,18 +54,16 @@ public class BarInfoActivity extends AppCompatActivity {
         toolbar.setTitle(name);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
-        SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
-        // Set up the ViewPager with the sections adapter.
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+
         ViewPager mViewPager = (ViewPager) findViewById(R.id.bar_info_container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.bar_info_tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -144,12 +133,10 @@ public class BarInfoActivity extends AppCompatActivity {
                     BarDetailsFragment barDetailsFragment = new BarDetailsFragment();
                     barDetailsFragment.setArguments(bundle);
                     return barDetailsFragment;
-                /*
                 case 1:
                     BarCommentFragment barCommentFragment = new BarCommentFragment();
                     barCommentFragment.setArguments(bundle);
                     return barCommentFragment;
-                */
                 default:
                     break;
             }
@@ -158,7 +145,7 @@ public class BarInfoActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 3;
+            return 2;
         }
 
         @Override
